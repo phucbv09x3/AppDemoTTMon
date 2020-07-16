@@ -19,7 +19,7 @@ class FeedAdapter(val feedList: MutableList<FeedData>, val onItemClick: OnItemCl
     }
 
     override fun onBindViewHolder(holder: FeedViewHolder, position: Int) {
-        var feedData: FeedData = feedList[position]
+        var feedData = feedList[position]
         holder.imageProfile.setImageResource(feedData.mImageProfile)
         holder.nameTop.text = feedData.mName
         holder.date.text = feedData.mDate
@@ -49,9 +49,8 @@ class FeedAdapter(val feedList: MutableList<FeedData>, val onItemClick: OnItemCl
         val content = itemView.findViewById(R.id.tv_content) as TextView
         val imageContent = itemView.findViewById(R.id.iv_content) as ImageView
 
-       // val heart=itemView.findViewById(R.id.iv_heart) as ImageButton
+        // val heart=itemView.findViewById(R.id.iv_heart) as ImageButton
     }
-
 
 
 }
