@@ -25,9 +25,8 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class FeedFragment : Fragment() {
+class FeedFragment : Fragment(){
     val feedList = mutableListOf<FeedData>()
-
     var onItemClick: OnItemClick? = null
     private var type = arrayOf("Hello", "Goodbye", "Xin Chao")
     override fun onCreateView(
@@ -36,6 +35,7 @@ class FeedFragment : Fragment() {
     ): View? {
 
 
+        Log.d("m","okoko")
         //onItemClick=activity as OnItemClick
         var view = inflater.inflate(R.layout.fragment_feed, container, false)
 
@@ -104,7 +104,7 @@ class FeedFragment : Fragment() {
             )
         )
 
-        val adapte: FeedAdapter = FeedAdapter(feedList, activity as ContentActivity)
+        val adapte: FeedAdapter = FeedAdapter(feedList,activity as ContentActivity )//activity as ContentActivity
         rc.adapter = adapte
         return view
     }
@@ -117,6 +117,9 @@ class FeedFragment : Fragment() {
         return sdf.format(date)
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+    }
 
 
 

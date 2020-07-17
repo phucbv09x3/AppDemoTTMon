@@ -19,9 +19,7 @@ import java.text.FieldPosition
 
 
 class MessageFragment : Fragment() {
-
-      lateinit var mNames : String
-
+    var mNames: String = ""
 
     private var list = mutableListOf<MesData>()
     override fun onCreateView(
@@ -29,19 +27,21 @@ class MessageFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_message, container, false)
-//        val rc=view.findViewById(R.id.rcy_mes) as? RecyclerView
-//        rc?.setHasFixedSize(true)
-//        rc?.layoutManager = LinearLayoutManager(view.context)
         val rc = view.findViewById(R.id.rcy_mes) as? RecyclerView
         rc?.layoutManager = LinearLayoutManager(view.context)
         rc?.setHasFixedSize(true)
-        list.add(MesData(mNames.toString()))
-        val adapter=MesAdapter(list)
-        rc?.adapter=adapter
+        list.add(0,MesData(mNames))
+        if (mNames.equals("")) {
+            list.removeAt(0)
+        }
+
+        val adapter = MesAdapter(list)
+        rc?.adapter = adapter
         return view
     }
     fun update(mName: String) {
         this.mNames = mName
+
     }
 
 
