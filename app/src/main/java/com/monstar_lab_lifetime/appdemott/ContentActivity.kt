@@ -45,20 +45,14 @@ class ContentActivity : AppCompatActivity(), View.OnClickListener, OnItemClick {
 
 
     }
-
-
-    private var count=0
+    
     override fun onClick(v: View?) {
 
         when (v?.id) {
             R.id.imgbtn_home -> {
-                count++
-                if (count==1){
-                viewHome()
-                }else if (count>1){
-                    fragmentManager.show(feedFragment)
 
-                }
+                viewHome()
+
 
             }
             R.id.imgbtn_mes -> {
