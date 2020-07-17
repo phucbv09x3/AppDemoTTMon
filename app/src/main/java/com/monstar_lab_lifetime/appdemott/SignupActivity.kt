@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.Toast
 import com.monstar_lab_lifetime.appdemott.R
 import kotlinx.android.synthetic.main.activity_signup.*
+import kotlin.String
 
 class SignupActivity : AppCompatActivity(), View.OnClickListener {
     private var mEmail =

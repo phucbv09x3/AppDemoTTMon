@@ -91,7 +91,7 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
 
-       // button4.isEnabled=false
+        // button4.isEnabled=false
         when (v?.id) {
             R.id.button4 -> {
                 checkSignIn()
@@ -121,9 +121,10 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
 
             ed.commit()
             val intentF = Intent(this, ContentActivity::class.java)
-            intentF.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-            intentF.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            //intentF.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            //intentF.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
             startActivity(intentF)
+            finish()
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         } else if (getemail.isEmpty()) {
             Toast.makeText(this, "Email rỗng ! ", Toast.LENGTH_SHORT)

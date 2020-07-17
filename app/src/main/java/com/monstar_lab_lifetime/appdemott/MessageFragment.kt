@@ -16,33 +16,31 @@ import kotlinx.android.synthetic.main.item_feed.*
 import kotlinx.android.synthetic.main.item_message.*
 import kotlinx.android.synthetic.main.item_message.view.*
 import java.text.FieldPosition
+import kotlin.String
 
 
 class MessageFragment : Fragment() {
-    var mNames: String = ""
 
-    private var list = mutableListOf<MesData>()
+    var adapter = MesAdapter()
+    var list = mutableListOf<MesData>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_message, container, false)
-        val rc = view.findViewById(R.id.rcy_mes) as? RecyclerView
-        rc?.layoutManager = LinearLayoutManager(view.context)
-        rc?.setHasFixedSize(true)
-        list.add(0,MesData(mNames))
-        if (mNames.equals("")) {
-            list.removeAt(0)
-        }
-
-        val adapter = MesAdapter(list)
-        rc?.adapter = adapter
         return view
     }
-    fun update(mName: String) {
-        this.mNames = mName
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        rcy_mes.layoutManager = LinearLayoutManager(view.context)
+        rcy_mes.setHasFixedSize(true)
+        rcy_mes.adapter = adapter
+        adapter.setList(list)
 
     }
+
+
 
 
 }

@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 
-class FeedAdapter(  var feedList: MutableList<FeedData>,val onItemClick: OnItemClick) :
+class FeedAdapter(var feedList: MutableList<FeedData>, val onItemClick: OnItemClick) :
     RecyclerView.Adapter<FeedAdapter.FeedViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedViewHolder {

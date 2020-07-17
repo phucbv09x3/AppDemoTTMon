@@ -7,23 +7,24 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/cv_message"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         android:layout_marginTop="10dp"
         android:src="@drawable/girl"
         app:layout_constraintLeft_toLeftOf="@id/guidelineMes"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/tv_nameMes"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_height="30dp"
         android:layout_marginLeft="10dp"
         android:textStyle="bold"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:gravity="center"
         android:text="Vernon Bradley"
-        android:textSize="25dp"
+        android:textSize="22dp"
         app:layout_constraintLeft_toRightOf="@id/cv_message"
         app:layout_constraintTop_toTopOf="@id/cv_message" />
 
@@ -31,8 +32,9 @@
         android:id="@+id/tv_bottom_name"
         android:layout_width="wrap_content"
         android:layout_height="25dp"
+        android:gravity="center"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="3dp"
         android:text="Shall we meet today?"
         app:layout_constraintLeft_toRightOf="@id/cv_message"
         app:layout_constraintTop_toBottomOf="@id/tv_nameMes" />

@@ -1,4 +1,6 @@
 package com.monstar_lab_lifetime.appdemott
 
-data class MesData(var name: String){
+import kotlin.String
+
+data class MesData(var name: String, var image: Int?) {
 }
